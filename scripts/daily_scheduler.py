@@ -16,14 +16,21 @@ def run_niche_pipeline(niche):
     # Set NICHE env var
     env = os.environ.copy()
     env['NICHE'] = niche
-    # Run the pipeline steps
+    # Run common steps
     subprocess.run(['python3', 'scripts/topics.py'], env=env)
     subprocess.run(['python3', 'scripts/generate_script.py'], env=env)
-    # Assume recording is manual, then watch triggers the rest
-    # For fully automated, add AI video generation or something
+    
+    # Niche-specific content generation
+    if niche == 'music-mix':
+        subprocess.run(['python3', 'scripts/music_prompt.py'], env=env)
+    elif niche == 'ai-news':
+        subprocess.run(['python3', f'niches/{niche}/scripts/ai_news_generator.py'], env=env)
+    # Add more niche-specific logic here
+    
+    # The rest is triggered by watch.py when recording is done
 
 def daily_job():
-    niches = ['music-mix', 'tech-reviews']  # Add more as created
+    niches = ['music-mix', 'tech-reviews', 'ai-news']  # Add more as created
     for niche in niches:
         run_niche_pipeline(niche)
 
