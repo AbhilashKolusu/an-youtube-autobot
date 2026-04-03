@@ -1,0 +1,24 @@
+# .gitignore
+
+# Environment variables
+.env
+
+# Credentials
+configs/*.json
+token.pickle
+
+# Recordings and builds
+recordings/
+builds/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

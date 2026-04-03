@@ -1,0 +1,14 @@
+# Python Dependencies
+google-auth
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2
+watchdog
+requests
+ffmpeg-python
+python-dotenv
+slack-sdk
+smtplib
+pandas
+openai  # or anthropic for LLM
+# Add more as needed for specific APIs
