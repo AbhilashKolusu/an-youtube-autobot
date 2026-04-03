@@ -1,0 +1,29 @@
+{
+  "niche_id": "health-longevity",
+  "display_name": "Health & Longevity",
+  "description": "Evidence-based health, wellness, and longevity hacks. Backed by 2026 research. Targets both general wellness seekers and the 40+ longevity-focused audience.",
+  "target_cpm_usd": 15,
+  "youtube_category_id": "26",
+  "default_video_length_mins": 8,
+  "elevenlabs_voice_id": "21m00Tcm4TlvDq8ikWAM",
+  "tone": "calm, trustworthy, science-backed, empowering — never alarmist",
+  "hook_templates": [
+    "One habit that adds {N} years (backed by {year} studies)",
+    "Why {supplement/habit} is overrated — and what actually works",
+    "The longevity protocol {N} centenarians have in common",
+    "{N} foods science says you should eat every day after {age}"
+  ],
+  "content_angles": ["listicle", "explainer", "research-review", "myth-busting"],
+  "banned_topics": ["unproven miracle cures", "anti-vax content", "dangerous self-treatment"],
+  "required_disclaimers": [
+    "Always consult a qualified healthcare professional before making changes to your diet, exercise, or supplement routine."
+  ],
+  "upload_schedule": {
+    "days": ["Monday", "Thursday"],
+    "time_utc": "15:00"
+  },
+  "tags_base": [
+    "longevity", "health tips", "wellness", "anti-aging", "healthy habits",
+    "nutrition", "exercise science", "biohacking", "lifespan", "healthspan"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "niche_id": "ai-tools",
+  "display_name": "AI Tools & Productivity",
+  "description": "Explainers, walkthroughs, and documentaries on the fastest-moving AI tools. Faceless format with screen-captures + AI-generated visuals.",
+  "target_cpm_usd": 14,
+  "youtube_category_id": "28",
+  "default_video_length_mins": 9,
+  "elevenlabs_voice_id": "ErXwobaYiN019PkySvjV",
+  "tone": "curious, fast-paced, technically credible but accessible to non-developers",
+  "hook_templates": [
+    "I tested {N} new AI tools so you don't have to",
+    "{Tool A} vs {Tool B}: which one actually works in {year}?",
+    "Build {project} with AI in {time} — no code needed",
+    "The AI workflow that replaced my {task} completely"
+  ],
+  "content_angles": ["comparison", "tutorial", "documentary", "reaction"],
+  "banned_topics": ["AI doomerism without balance", "misinformation about AI capabilities"],
+  "required_disclaimers": [],
+  "upload_schedule": {
+    "days": ["Tuesday", "Thursday", "Saturday"],
+    "time_utc": "13:00"
+  },
+  "tags_base": [
+    "AI tools", "artificial intelligence", "productivity", "ChatGPT", "Claude AI",
+    "AI workflow", "automation", "no-code AI", "AI agents", "future of work"
+  ]
+}

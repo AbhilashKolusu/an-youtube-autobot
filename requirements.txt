@@ -1,14 +1,39 @@
-# Python Dependencies
-google-auth
-google-api-python-client
-google-auth-oauthlib
-google-auth-httplib2
-watchdog
-requests
-ffmpeg-python
-python-dotenv
-slack-sdk
-smtplib
-pandas
-openai  # or anthropic for LLM
-# Add more as needed for specific APIs
+# ── Orchestration ──────────────────────────────────────────────────────────
+crewai[tools]>=1.0.0
+langgraph>=1.0.0
+langchain>=0.3.0
+langchain-core>=0.3.0
+
+# ── LLM providers ──────────────────────────────────────────────────────────
+langchain-anthropic>=1.0.0        # Claude claude-opus-4-6 / Sonnet 4.6
+langchain-openai>=0.3.0           # GPT-4o fallback
+anthropic>=0.40.0
+
+# ── Google / YouTube APIs ──────────────────────────────────────────────────
+google-api-python-client>=2.150.0
+google-auth>=2.35.0
+google-auth-oauthlib>=1.2.0
+google-auth-httplib2>=0.2.0
+
+# ── ElevenLabs TTS ─────────────────────────────────────────────────────────
+elevenlabs>=2.0.0
+
+# ── Thumbnail / image post-processing ──────────────────────────────────────
+Pillow>=10.4.0
+
+# ── Web search ─────────────────────────────────────────────────────────────
+requests>=2.32.0
+
+# ── Scheduling ─────────────────────────────────────────────────────────────
+schedule>=1.2.2
+
+# ── Utilities ──────────────────────────────────────────────────────────────
+python-dotenv>=1.0.1
+pandas>=2.2.0
+ffmpeg-python>=0.2.0
+
+# ── Observability ──────────────────────────────────────────────────────────
+watchdog>=4.0.0
+
+# ── Social promotion (optional) ────────────────────────────────────────────
+slack-sdk>=3.33.0

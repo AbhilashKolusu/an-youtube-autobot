@@ -9,9 +9,22 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 import pickle
+from datetime import datetime
 
 # Scopes for Google Sheets and Trends
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/trends.readonly']
+
+def log_api_usage(niche, action, cost):
+    """Logs API usage to the central tracking file."""
+    log_file = "logs/api_usage.csv"
+    os.makedirs("logs", exist_ok=True)
+    file_exists = os.path.isfile(log_file)
+    niche_name = niche or os.getenv('NICHE', 'system')
+    with open(log_file, "a") as f:
+        if not file_exists:
+            f.write("timestamp,niche,action,cost_units\n")
+            file_exists = True
+        f.write(f"{datetime.now().isoformat()},{niche_name},{action},{cost}\n")
 
 def get_credentials():
     creds = None
@@ -43,6 +56,9 @@ def main():
     range_name = 'Topics!A1'
     values = [['Topic', 'Searches'], ['Lo-fi Mix', '1000']]
     body = {'values': values}
+    
+    log_api_usage(None, "sheets.values.update", 1)
+    
     result = sheets_service.spreadsheets().values().update(
         spreadsheetId=spreadsheet_id, range=range_name,
         valueInputOption='RAW', body=body).execute()

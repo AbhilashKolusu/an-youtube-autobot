@@ -1,0 +1,29 @@
+{
+  "niche_id": "personal-finance",
+  "display_name": "Personal Finance & Investing",
+  "description": "High-RPM finance channel. Daily hooks on stocks, passive income, budgeting, and investing for Gen-Z/Millennials.",
+  "target_cpm_usd": 18,
+  "youtube_category_id": "22",
+  "default_video_length_mins": 8,
+  "elevenlabs_voice_id": "21m00Tcm4TlvDq8ikWAM",
+  "tone": "authoritative yet approachable, data-backed, no hype",
+  "hook_templates": [
+    "Top {N} {topic} that most people miss",
+    "I tested {strategy} for 30 days — here's what happened",
+    "The {topic} nobody is talking about in {year}",
+    "{Mistake} that's costing you ${amount} every month"
+  ],
+  "content_angles": ["listicle", "explainer", "case-study", "comparison"],
+  "banned_topics": ["pump-and-dump schemes", "guaranteed returns", "unlicensed advice"],
+  "required_disclaimers": [
+    "This video is for educational purposes only and does not constitute financial advice."
+  ],
+  "upload_schedule": {
+    "days": ["Monday", "Wednesday", "Friday"],
+    "time_utc": "14:00"
+  },
+  "tags_base": [
+    "personal finance", "investing", "passive income", "money", "financial freedom",
+    "stocks", "budgeting", "wealth building", "financial tips", "money management"
+  ]
+}
