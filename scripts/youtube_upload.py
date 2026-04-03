@@ -10,8 +10,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+OAUTH_FILE = os.path.expandvars(os.getenv('YOUTUBE_OAUTH_TOKEN', 'configs/youtube_oauth.json'))
+
 def upload_video(video_path, title, description, tags):
-    creds = Credentials.from_authorized_user_file('configs/youtube_oauth.json')
+    creds = Credentials.from_authorized_user_file(OAUTH_FILE)
     youtube = build('youtube', 'v3', credentials=creds)
 
     request = youtube.videos().insert(
@@ -33,7 +35,8 @@ def upload_video(video_path, title, description, tags):
     print(f"Uploaded video: {response['id']}")
 
 def main():
-    upload_video("builds/test/final.mp4", "Test Mix", "Description", ["lo-fi", "music"])
+    build_folder = os.path.expandvars(os.getenv('BUILD_FOLDER', 'builds/'))
+    upload_video(f"{build_folder}test/final.mp4", "Test Mix", "Description", ["lo-fi", "music"])
 
 if __name__ == '__main__':
     main()

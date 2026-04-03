@@ -8,6 +8,11 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import os
 import subprocess
+from dotenv import load_dotenv
+
+load_dotenv()
+
+WATCH_FOLDER = os.path.expandvars(os.getenv('WATCH_FOLDER', 'recordings/host'))
 
 class Watcher(FileSystemEventHandler):
     def on_created(self, event):
@@ -18,7 +23,7 @@ class Watcher(FileSystemEventHandler):
             subprocess.run(['python', 'scripts/resolve_edit.py', episode_id])
 
 if __name__ == "__main__":
-    path = "recordings/host"
+    path = WATCH_FOLDER
     event_handler = Watcher()
     observer = Observer()
     observer.schedule(event_handler, path, recursive=True)
