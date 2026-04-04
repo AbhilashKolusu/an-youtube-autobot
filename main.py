@@ -161,11 +161,11 @@ def run_analytics(niche: str, video_id: str, days_back: int = 1):
     from crew import build_crew
     from crewai import Crew, Task
     import agents as ag
-    from langchain_anthropic import ChatAnthropic
 
     log.info(f"Fetching analytics | niche={niche} | videoId={video_id} | days_back={days_back}")
 
-    llm = ChatAnthropic(model="claude-sonnet-4-6", anthropic_api_key=os.environ["ANTHROPIC_API_KEY"])
+    from crewai import LLM
+    llm = LLM(model="anthropic/claude-sonnet-4-6", api_key=os.environ["ANTHROPIC_API_KEY"], max_tokens=8096)
     analytics_agent = ag.build_analytics_agent(llm)
 
     task = Task(

@@ -20,6 +20,7 @@ elevenlabs>=2.0.0
 
 # ── Thumbnail / image post-processing ──────────────────────────────────────
 Pillow>=10.4.0
+replicate>=0.34.0
 
 # ── Web search ─────────────────────────────────────────────────────────────
 requests>=2.32.0

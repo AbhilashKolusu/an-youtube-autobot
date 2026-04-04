@@ -15,7 +15,7 @@ def _manager_llm() -> LLM:
     """Claude claude-opus-4-6 as manager. Falls back to GPT-4o."""
     if os.getenv("ANTHROPIC_API_KEY"):
         return LLM(
-            model="claude-opus-4-6",
+            model="anthropic/claude-opus-4-6",
             api_key=os.environ["ANTHROPIC_API_KEY"],
             max_tokens=8096,
         )
@@ -28,7 +28,7 @@ def _worker_llm() -> LLM:
     """Claude Sonnet 4.6 for workers (faster + cheaper)."""
     if os.getenv("ANTHROPIC_API_KEY"):
         return LLM(
-            model="claude-sonnet-4-6",
+            model="anthropic/claude-sonnet-4-6",
             api_key=os.environ["ANTHROPIC_API_KEY"],
             max_tokens=8096,
         )
