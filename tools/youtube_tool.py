@@ -71,7 +71,6 @@ def search_trending(query: str, max_results: int = 10) -> list[dict]:
     return results
 
 
-@tool("YouTube Video Upload")
 def upload_video(
     niche: str,
     video_path: str,
